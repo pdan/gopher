@@ -230,6 +230,7 @@ h2 {
 }
 
 h3 {
+    color: #fc6621;
     font-size: 3rem;
 }
 
@@ -1108,7 +1109,7 @@ body:not(.post-template) .post-title {
        in the opposite direction by half its own width.
        Works for images that are larger than their containers. */
     position: relative;
-    left: 50%;
+    left: 75%;
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
     -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
@@ -1905,9 +1906,3 @@ body:not(.post-template) .post-title {
                 transform: translateY(-5px) ;
     }
 }
-
-
-/* ==========================================================================
-   End of file. Animations should be the last thing here. Do not add stuff
-   below this point, or it will probably fuck everything up.
-   ========================================================================== */
