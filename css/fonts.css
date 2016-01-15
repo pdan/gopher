@@ -1,0 +1,49 @@
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/Vazir.eot');
+  src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/Vazir-Bold.eot');
+  src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Bold.woff') format('woff'), url('../fonts/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Gandom;
+  src: url('../fonts/Gandom.eot');
+  src: url('../fonts/Gandom.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gandom.woff') format('woff'),
+       url('../fonts/Gandom.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Gandom;
+  src: url('../fonts/Gandom-Bold.eot');
+  src: url('../fonts/Gandom-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gandom-Bold.woff') format('woff'),
+       url('../fonts/Gandom-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('../fonts/Shabnam.eot');
+  src: url('../fonts/Shabnam.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Shabnam.woff') format('woff'),
+       url('../fonts/Shabnam.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('../fonts/Shabnam-Bold.eot');
+  src: url('../fonts/Shabnam-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Shabnam-Bold.woff') format('woff'),
+       url('../fonts/Shabnam-Bold.ttf') format('truetype');
+  font-weight: bold;
+}

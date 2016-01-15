@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>معرفی on Gopher</title>
+    <link>http://localhost:1313/tags/%D9%85%D8%B9%D8%B1%D9%81%DB%8C/</link>
+    <description>Recent content in معرفی on Gopher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
+    <lastBuildDate>Mon, 21 Dec 2015 23:34:22 +0330</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%D9%85%D8%B9%D8%B1%D9%81%DB%8C/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>پیش درآمد</title>
+      <link>http://localhost:1313/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</link>
+      <pubDate>Mon, 21 Dec 2015 23:34:22 +0330</pubDate>
+      
+      <guid>http://localhost:1313/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</guid>
+      <description>&lt;p&gt;برنامه‌نویسی کامپیوتر یک هنر است، مهارت و علم چگونگی نوشتن برنامه‌ها به منظور پردازش  در کامپیوتر‌ها. در این وبلاگ سعی داریم چگونگی برنامه‌نویسی، بررسی توانایی‌ها و معرفی امکانات &lt;a href=&#34;https://golang.org/&#34;&gt;زبانی که توسط  Google  طراحی شده، بنام  Go&lt;/a&gt;  بپردازیم.&lt;/p&gt;
+
+&lt;p&gt;Go یک زبان برنامه‌نویسی همه منظوره با امکانات پیشرفته و Syntax  شفاف می‌باشد. بخاطر پشتیبانی از گستره بسیاری از پلتفرم‌ها، کتابخانه‌های قدرتمند مستند سازی شده و تمرکز روی اصول مهندسی نرم‌افزار،  Go  یکی از ایده‌آل ترین زبان‌ها برای یادگیری بعنوان اولین زبان برنامه‌نویسی می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;مراحلی که ما برای نوشتن یک نرم‌افزار  Go  استفاده می‌کنیم (و بیشتر برنامه نویسان) خیلی ساده است:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;جمع‌آوری نیازمندی‌ها&lt;/li&gt;
+&lt;li&gt;پیدا کردن راه حل&lt;/li&gt;
+&lt;li&gt;نوشتن کد برای راه حل اجرایی&lt;/li&gt;
+&lt;li&gt;کامپایل کد به برنامه قابل اجرا&lt;/li&gt;
+&lt;li&gt;اجرا و آزمایش برای اطمینان از کارکرد&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;این یک پروسه تکرار شونده است (بدین منظور که بار‌ها تکرار خواهد شد) و مراحل با یکدیگر هم‌پوشانی دارند.&lt;/p&gt;
+
+&lt;p&gt;Go  یک زبان ترجمه شونده است، بدین‌منظور که کد نوشته توسط شما به زبان ماشین ترجمه می‌شود. بنابراین قبل از اینکه ما بتوانیم یک نرم‌افزار با زبان  Go  بنویسیم، نیاز به نصب کامپایلر آن داریم.&lt;/p&gt;
+
+&lt;p&gt;نصاب آماده شده  بصورت اتوماتیک کامپایلر زبان  Go  را روی سیستم شما نصب می‌کند. شما می‌توانید آخرین نسخه از نصاب مخصوص سیستم‌عامل خود را از &lt;a href=&#34;https://golang.org/dl/&#34;&gt;golang.org/dl&lt;/a&gt; دریافت کنید.&lt;/p&gt;
+
+&lt;p&gt;بعد از نصب، با وارد کردن دستور زیر در خط فرمان، مطمئن شوید که آخرین نسخه به درستی نصب شده است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ go version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با وارد کردن دستور بالا باید خروجی بصورت زیر مشاهده شود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;go version go1.5.2
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

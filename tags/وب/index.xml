@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>وب on Gopher</title>
+    <link>http://localhost:1313/tags/%D9%88%D8%A8/</link>
+    <description>Recent content in وب on Gopher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
+    <lastBuildDate>Wed, 13 Jan 2016 12:07:57 +0330</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%D9%88%D8%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>unit testing در زبان go</title>
+      <link>http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
+      <pubDate>Wed, 13 Jan 2016 12:07:57 +0330</pubDate>
+      
+      <guid>http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
+      <description>
+
+&lt;p&gt;یکی از اجزای مهم یک نرم‌افزار آزمایش کردن (Testing) آن است. دو روش معمول برای Testing  برنامه‌های نوشته شده تحت وب به زبان Go  وجود دارد. اولین روش با حس و حال  unit-test  می‌باشد. دیگری بنام  روش end-to-end معروف است. در این پست ما هر دو روش را بررسی می‌کنیم.&lt;/p&gt;
+
+&lt;h3 id=&#34;unit-testing:a2d0856570c3a00a33aaa953a6706b48&#34;&gt;Unit Testing&lt;/h3&gt;
+
+&lt;p&gt;آزمایش واحد به ما این اجازه را می‌دهد که در وب یک &lt;code&gt;http.HandlerFunc&lt;/code&gt; را بطور مستقیم و بدون واسط (middleware)  مورد آزمون قرار بدهیم. حال که برنامه ما در فایل &lt;code&gt;main.go&lt;/code&gt; بصورت فوق می‌باشد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func HelloWorld(res http.ResponseWriter, req *http.Request) {
+    fmt.Fprint(res, &amp;quot;Hello World&amp;quot;)
+}
+
+func main() {
+    http.HandleFunc(&amp;quot;/&amp;quot;, HelloWorld)
+    http.ListenAndServe(&amp;quot;:3000&amp;quot;, nil)
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یک فایل Test  بصورت زیر می‌باشد و اینطور می‌باشد که نام آن باید همانند نام فایل مورد آزمون قرار گرفته باشد و در آخر آن &lt;code&gt;test_&lt;/code&gt;  اضافه شده باشد. همچنین هر دو فایل ( فایل اصلی و  Test)  باید در یک پوشه باشند. در این مثال فایل  Test  ما با نام &lt;code&gt;main_test.go&lt;/code&gt; با محتوای فوق ذخیره می‌شود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+    &amp;quot;net/http&amp;quot;
+    &amp;quot;net/http/httptest&amp;quot;
+    &amp;quot;testing&amp;quot;
+)
+
+func Test_HelloWorld(t *testing.T) {
+    req, err := http.NewRequest(&amp;quot;GET&amp;quot;, &amp;quot;http://example.com/foo&amp;quot;, nil)
+    if err != nil {
+        t.Fatal(err)
+    }
+
+    res := httptest.NewRecorder()
+    HelloWorld(res, req)
+
+    exp := &amp;quot;Hello World&amp;quot;
+    act := res.Body.String()
+    if exp != act {
+        t.Fatalf(&amp;quot;Expected %s gog %s&amp;quot;, exp, act)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حال دستور اجرای  Test  را بصورت زیر اعمال کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ go test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;نتیجه به این صورت خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;PASS
+ok  	project	0.009s
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;end-to-end-testing:a2d0856570c3a00a33aaa953a6706b48&#34;&gt;End To End Testing&lt;/h3&gt;
+
+&lt;p&gt;این نوع آزمایش به ما امکان میدهد که یک چرخه کامل را درون نرم‌افزار آزمایش کنیم. در حالی که Unit-Testing یک تابع خاص را چک خواهد کرد. همچنین این روش  Test  واسط های نرم‌افزار، Router‌ها و سایر قسمت‌هایی که در طول یک درخواست درگیر خواهند بود آزمایش می‌کند. اگر برنامه اصلی ما به این صورت باشد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;net/http&amp;quot;
+
+    &amp;quot;github.com/codegangsta/negroni&amp;quot;
+    &amp;quot;github.com/julienschmidt/httprouter&amp;quot;
+)
+
+func HelloWorld(res http.ResponseWriter, req *http.Request, p httprouter.Params) {
+    fmt.Fprint(res, &amp;quot;Hello World&amp;quot;)
+}
+
+func App() http.Handler {
+    n := negroni.Classic()
+
+    m := func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
+        fmt.Fprint(res, &amp;quot;Before...&amp;quot;)
+        next(res, req)
+        fmt.Fprint(res, &amp;quot;...After&amp;quot;)
+    }
+    n.Use(negroni.HandlerFunc(m))
+
+    r := httprouter.New()
+
+    r.GET(&amp;quot;/&amp;quot;, HelloWorld)
+    n.UseHandler(r)
+    return n
+}
+
+func main() {
+    http.ListenAndServe(&amp;quot;:3000&amp;quot;, App())
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فایل حاوی محتوای Test  به صورت  فوق خواهد بود. توجه داشته باشید که فایل &lt;code&gt;main_test.go&lt;/code&gt; در کنار فایل &lt;code&gt;main.go&lt;/code&gt;  در پوشه‌ای مشترک قرار می‌گیرند.&lt;/p&gt;
+
+&lt;p&gt;حال دستور اجرای  Test  را بصورت زیر اعمال کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ go test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;گرفته شده از کتاب &lt;a href=&#34;https://www.gitbook.com/book/codegangsta/building-web-apps-with-go&#34;&gt;Building Web Apps With Go&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

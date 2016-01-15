@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" unit testing در زبان go &middot;  Gopher" />
+  	<meta property="og:site_name" content="Gopher" />
+  	<meta property="og:url" content="http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2016-01-13T12:07:57&#43;03:30" />
+
+    
+    <meta property="og:article:tag" content="وب" />
+    
+    <meta property="og:article:tag" content="test" />
+    
+    <meta property="og:article:tag" content="unit-test" />
+    
+    <meta property="og:article:tag" content="آموزش" />
+    
+    
+
+  <title>
+     unit testing در زبان go &bull;  Gopher
+  </title>
+
+    <meta name="description" content="مطالبی پیرامون برنامه نویسی به زبان گو" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/fontiran.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/style.css" />
+
+    
+      
+          <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Gopher" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.14" />
+
+    <link rel="canonical" href="http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/" />
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57981593-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">فهرست مطالب</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/">پیش درآمد</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/index.xml">اشتراک</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="http://localhost:1313/"><img src="http://localhost:1313/images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">unit testing در زبان go</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2016-01-13T12:07:57&#43;03:30">
+            Jan 13, 2016
+          </time>
+        
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/%D9%88%D8%A8/">#وب</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/test/">#test</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/unit-test/">#unit-test</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/%D8%A2%D9%85%D9%88%D8%B2%D8%B4/">#آموزش</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>یکی از اجزای مهم یک نرم‌افزار آزمایش کردن (Testing) آن است. دو روش معمول برای Testing  برنامه‌های نوشته شده تحت وب به زبان Go  وجود دارد. اولین روش با حس و حال  unit-test  می‌باشد. دیگری بنام  روش end-to-end معروف است. در این پست ما هر دو روش را بررسی می‌کنیم.</p>
+
+<h3 id="unit-testing:a2d0856570c3a00a33aaa953a6706b48">Unit Testing</h3>
+
+<p>آزمایش واحد به ما این اجازه را می‌دهد که در وب یک <code>http.HandlerFunc</code> را بطور مستقیم و بدون واسط (middleware)  مورد آزمون قرار بدهیم. حال که برنامه ما در فایل <code>main.go</code> بصورت فوق می‌باشد:</p>
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;net/http&quot;
+)
+
+func HelloWorld(res http.ResponseWriter, req *http.Request) {
+    fmt.Fprint(res, &quot;Hello World&quot;)
+}
+
+func main() {
+    http.HandleFunc(&quot;/&quot;, HelloWorld)
+    http.ListenAndServe(&quot;:3000&quot;, nil)
+}
+
+</code></pre>
+
+<p>یک فایل Test  بصورت زیر می‌باشد و اینطور می‌باشد که نام آن باید همانند نام فایل مورد آزمون قرار گرفته باشد و در آخر آن <code>test_</code>  اضافه شده باشد. همچنین هر دو فایل ( فایل اصلی و  Test)  باید در یک پوشه باشند. در این مثال فایل  Test  ما با نام <code>main_test.go</code> با محتوای فوق ذخیره می‌شود:</p>
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;net/http&quot;
+    &quot;net/http/httptest&quot;
+    &quot;testing&quot;
+)
+
+func Test_HelloWorld(t *testing.T) {
+    req, err := http.NewRequest(&quot;GET&quot;, &quot;http://example.com/foo&quot;, nil)
+    if err != nil {
+        t.Fatal(err)
+    }
+
+    res := httptest.NewRecorder()
+    HelloWorld(res, req)
+
+    exp := &quot;Hello World&quot;
+    act := res.Body.String()
+    if exp != act {
+        t.Fatalf(&quot;Expected %s gog %s&quot;, exp, act)
+    }
+}
+</code></pre>
+
+<p>حال دستور اجرای  Test  را بصورت زیر اعمال کنید:</p>
+
+<pre><code class="language-bash">$ go test
+</code></pre>
+
+<p>نتیجه به این صورت خواهد بود:</p>
+
+<pre><code class="language-bash">PASS
+ok  	project	0.009s
+
+</code></pre>
+
+<h3 id="end-to-end-testing:a2d0856570c3a00a33aaa953a6706b48">End To End Testing</h3>
+
+<p>این نوع آزمایش به ما امکان میدهد که یک چرخه کامل را درون نرم‌افزار آزمایش کنیم. در حالی که Unit-Testing یک تابع خاص را چک خواهد کرد. همچنین این روش  Test  واسط های نرم‌افزار، Router‌ها و سایر قسمت‌هایی که در طول یک درخواست درگیر خواهند بود آزمایش می‌کند. اگر برنامه اصلی ما به این صورت باشد:</p>
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;net/http&quot;
+
+    &quot;github.com/codegangsta/negroni&quot;
+    &quot;github.com/julienschmidt/httprouter&quot;
+)
+
+func HelloWorld(res http.ResponseWriter, req *http.Request, p httprouter.Params) {
+    fmt.Fprint(res, &quot;Hello World&quot;)
+}
+
+func App() http.Handler {
+    n := negroni.Classic()
+
+    m := func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
+        fmt.Fprint(res, &quot;Before...&quot;)
+        next(res, req)
+        fmt.Fprint(res, &quot;...After&quot;)
+    }
+    n.Use(negroni.HandlerFunc(m))
+
+    r := httprouter.New()
+
+    r.GET(&quot;/&quot;, HelloWorld)
+    n.UseHandler(r)
+    return n
+}
+
+func main() {
+    http.ListenAndServe(&quot;:3000&quot;, App())
+}
+</code></pre>
+
+<p>فایل حاوی محتوای Test  به صورت  فوق خواهد بود. توجه داشته باشید که فایل <code>main_test.go</code> در کنار فایل <code>main.go</code>  در پوشه‌ای مشترک قرار می‌گیرند.</p>
+
+<p>حال دستور اجرای  Test  را بصورت زیر اعمال کنید:</p>
+
+<pre><code class="language-bash">$ go test
+</code></pre>
+
+<blockquote>
+<p>گرفته شده از کتاب <a href="https://www.gitbook.com/book/codegangsta/building-web-apps-with-go">Building Web Apps With Go</a></p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="http://localhost:1313/" style="background-image: url(http://localhost:1313/images/logo.png)"><span class="hidden">پوریا دانشور's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+    
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'gophergo';
+  var disqus_url = 'http:\/\/localhost:1313\/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Gopher</a> .تمامی حقوق نشر محفوظ می‌باشد</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/pdan/caspian">Caspian</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/persian-date-0.1.8.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>
+

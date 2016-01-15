@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" ساخت محیط ساده برای توسعه با زبان go &middot;  Gopher" />
+  	<meta property="og:site_name" content="Gopher" />
+  	<meta property="og:url" content="http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2016-01-15T21:23:04&#43;03:30" />
+
+    
+    <meta property="og:article:tag" content="آموزش" />
+    
+    <meta property="og:article:tag" content="editor" />
+    
+    <meta property="og:article:tag" content="شروع" />
+    
+    <meta property="og:article:tag" content="نصب" />
+    
+    
+
+  <title>
+     ساخت محیط ساده برای توسعه با زبان go &bull;  Gopher
+  </title>
+
+    <meta name="description" content="مطالبی پیرامون برنامه نویسی به زبان گو" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/fontiran.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/style.css" />
+
+    
+      
+          <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Gopher" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.14" />
+
+    <link rel="canonical" href="http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/" />
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57981593-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">فهرست مطالب</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/">پیش درآمد</a>
+            </li>
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/index.xml">اشتراک</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head" style="background-image: url(http://localhost:1313//images/making-go-lang-dev-environment.jpg)">
+  <nav class="main-nav overlay clearfix">
+
+
+  
+      <a class="blog-logo" href="http://localhost:1313/"><img src="http://localhost:1313/images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">ساخت محیط ساده برای توسعه با زبان go</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2016-01-15T21:23:04&#43;03:30">
+            Jan 15, 2016
+          </time>
+        
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/%D8%A2%D9%85%D9%88%D8%B2%D8%B4/">#آموزش</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/editor/">#editor</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/%D8%B4%D8%B1%D9%88%D8%B9/">#شروع</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313/tags/%D9%86%D8%B5%D8%A8/">#نصب</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>داشتن یک محیط مناسب برای توسعه توسط یک زبان خاص همواره جزو مهمترین مسائل برای شروع کار با آن است. در اینجا سعی شده ابزار‌هایی برای ساخت محیط برنامه نویسی  Go  معرفی شود که در سه پلتفرم Linux, Mac, Windows  قابل پیاده سازی باشند. همچنین تمامی مراحل در سیستم عامل  Ubuntu 15.04  اجرا شده است.</p>
+
+<h3 id="نصب-go:5ed0c2b5ebe3646ba74bc1a39254cce9">نصب Go</h3>
+
+<p>برای نصب Go  و مشتقاتش از چندین راه می‌توان وارد شد! که در اینجا دو روش را بررسی خواهیم کرد.</p>
+
+<h5 id="راه-اول:5ed0c2b5ebe3646ba74bc1a39254cce9">راه اول</h5>
+
+<p>در ابتدا آخرین نسخه را برای سیستم عامل مورد علاقه خود از <a href="https://golang.org/dl/">صفحه رسمی golang</a> دریافت و نصب کنید.</p>
+
+<h5 id="راه-دوم-توصیه-می-شود:5ed0c2b5ebe3646ba74bc1a39254cce9">راه دوم (توصیه می‌شود)</h5>
+
+<p>معمولا مدیریت کنندگان نسخه (Version Managers) از طرفداران زیادی برخوردار هستند. برای زبان  Go  هم نرم‌افزار مدیریت نسخه خوبی ساخته شده با نام <a href="https://github.com/moovweb/gvm">gvm</a> که این قابلیت را به شما می‌دهد که نسخه‌های مختلفی از Go را روی سیستم خود داشته باشید تا در زمان نیاز به سرعت بین آنها سوییچ کنید. همانطور که می‌دانید غربی‌های خبیث این زبان را هم برای کشور عزیزمان تحریم کرده‌اند (مثلا اسمش نرم‌افزار آزاد هست) و  gvm  این امکان را به ما می‌دهد که بتوانیم Go  را از منبع دیگری که چه از داخل و چه از خارج تحریم نباشد نصب کنیم.</p>
+
+<p>ابتدا دستور زیر را در خط فرمان اجرا کنید تا بسته‌های پیش نیاز نصب شوند:</p>
+
+<pre><code class="language-bash">$ sudo apt-get install curl git mercurial make binutils bison gcc build-essential
+</code></pre>
+
+<p>برای نصب  gvm دستور زیر را در خط فرمان اجرا کنید:</p>
+
+<pre><code class="language-bash">$ bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+</code></pre>
+
+<p>حال که  gvm  نصب شده است دستور زیر را اجرا کنید تا از صحت نصب اطمینان حاصل کنید:</p>
+
+<pre><code class="language-bash">$ gvm version
+</code></pre>
+
+<p>از نسخه 1.5، مترجم  Go  مستقل شده است، بدین معنا که تمام کد‌های آن با نسخه  1.4،  بجای  C  نوشته شده است.  بنابراین برای اینکه بتوانیم نسخه 1.5  را کامپایل کنیم نیاز به نسخه 1.4  داریم. با اجرای دستورات زیر  Go  را برای سیستم خود نصب می‌نمایید:</p>
+
+<pre><code class="language-bash">$ gvm install go1.4.3 --source=http://g.pdan.ir/golang/go.git
+$ gvm use go1.4.3
+$ gvm install go1.5.3 --source=http://g.pdan.ir/golang/go.git
+</code></pre>
+
+<p>و اگر مورد تحریم قرار نگرفته‌اید <code>source=http://g.pdan.ir/golang/go.git--</code> را از انتهای دستورات حذف نمایید تا gvm از سرور اصلی گوگل برای شما نصب کند.</p>
+
+<h5 id="تعریف-فضای-کاری:5ed0c2b5ebe3646ba74bc1a39254cce9">تعریف فضای‌ کاری</h5>
+
+<p>از آنجایی که تمامی کدنویسی در زبان Go تحت چهارچوب خاصی توصیه می‌شود، <a href="https://golang.org/doc/code.html">پیشنهاد شده</a> حتما متغیر محیطی <code>GOPATH</code> به محیط کار (Workspace)  اشاره کند و همه کد‌ها در آنجا قرار بگیرند. gvm  در زمان نصب برای هر نسخه‌ محیطی جداگانه در نظر می‌گیرد. برای اینکه بدانید محیط کاری در کدام مسیر قرار دارد، کافی است دستور زیر را اجرا کنید:</p>
+
+<pre><code class="language-bash">$ echo $GOPATH
+</code></pre>
+
+<h3 id="نصب-محیط-کد-نویسی:5ed0c2b5ebe3646ba74bc1a39254cce9">نصب محیط کد نویسی</h3>
+
+<p>ویرایشگر‌ها و  IDE‌ های متعددی با قابلیت‌های متفاوت و مزیت‌ها و کمیت‌های قابل سنجش از  Go  پشتیبانی می‌کنند. مهم این است سلیقه شما چی بپسندد و با کدام بیشتر راحت باشید. لیستی از پلاگین‌ها و ویرایشگر‌ها برای این زبان را می‌توانید از <a href="https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins">IDEsAndTextEditorPlugins</a> دریافت کنید. در این پُست سعی می‌شود چند مورد را معرفی کنیم.</p>
+
+<h4 id="ویرایشگر-atom:5ed0c2b5ebe3646ba74bc1a39254cce9">ویرایشگر  ATOM</h4>
+
+<p>سایت رسمی: <a href="https://atom.io">atom.io</a></p>
+
+<p>از خصوصیات این ویرایشگر می‌توان به کد باز بودن آن و پشتیبانی از زبان  Go با افزونه <a href="https://github.com/joefitzgerald/**go**-**plus**">go-plus</a> اشاره کرد. این ویرایشگر توسط <a href="https://github.com/">Github</a>  در سال ۲۰۱۴ رونمایی شد. برای نصب این ویرایشگر کافی است به <a href="https://github.com/atom/atom/releases/tag/v1.3.3">صفحه انتشار نسخه‌ها</a> مراجعه کنید و نسخه متناسب با سیستم خود را دریافت کنید.</p>
+
+<p>برای این کار میتوانید از دستور <code>wget</code>  استفاده کنید (این دستور نسخه ۱.۳.۳ را برای سیستم‌های ۶۴ بیت دبیان دانلود می‌کند) :</p>
+
+<pre><code class="language-bash">$ wget -c https://github.com/atom/atom/releases/download/v1.3.3/atom-amd64.deb
+</code></pre>
+
+<p>سپس می‌توانید با دستور زیر آن را نصب نمایید:</p>
+
+<pre><code class="language-bash">$ sudo dpkg -i atom-amd64.deb
+</code></pre>
+
+<p>حال ویرایشگر نصب شده است، با اجرا کردن دستور زیر در خط فرمان می‌توانید افزونه  <a href="https://github.com/joefitzgerald/**go**-**plus**">go-plus</a>  را نصب کنید.</p>
+
+<pre><code class="language-bash">$ apm install go-plus
+</code></pre>
+
+<h4 id="ویرایشگر-sublime:5ed0c2b5ebe3646ba74bc1a39254cce9">ویرایشگر  Sublime</h4>
+
+<p>سایت رسمی: <a href="http://www.sublimetext.com/">sublimetext.org</a></p>
+
+<p>سابلایم یک ویرایشگر کد محبوب در بین توسعه دهندگان است که متاسفانه آزاد نیست ولی بدون محدودیت می‌توانید می‌توانید از آن استفاده کنید تنها چند وقت یکبار پیامی آزار دهنده شما را تشویق به خریدن نسخه کامل می‌کند. از ویژگی‌های این ویرایشگر سادگی، سرعت اجرای بالا حتی در سیستم‌های ضعیف می‌باشد.</p>
+
+<p>برای نصب ویرایشگر ابتدا آن را از سایت رسمی‌اش دریافت کنید و … اینطوری دریافت کنید:</p>
+
+<pre><code class="language-bash">$ wget -c https://download.sublimetext.com/sublime-text_build-3083_amd64.deb
+$ sudo dpkg -i sublime-text_build-3083_amd64.deb
+$ subl
+</code></pre>
+
+<p>با اجرای دستور آخر برنامه اجرا می‌شود و شما باید <a href="https://packagecontrol.io/installation#st3">Package Control</a> را که یک نصاب افزونه برای سابلایم است روی آن نصب نمایید. (مراجعه به سایت سازنده)</p>
+
+<p>بعد از نصب Package Control  و راه اندازی دوباره ویرایشگر، کلید‌های ترکیبی <code>ctrl+shift+p</code> را بفشارید و در جعبه متنی عبارت ‍<code>Package Control: Install Package</code> را وارد کنید تا لیست افزونه ها ظاهر شود. سپس افزونه <code>GoSublime</code>  را از آن انتخاب کنید تا نصب گردد.</p>
+
+<h3 id="ساخت-برنامه-hello-world:5ed0c2b5ebe3646ba74bc1a39254cce9">ساخت برنامه Hello World</h3>
+
+<p>در اینجا می‌خواهیم برنامه‌ای بسازیم که کلمه معروف  Hello World  را در خروجی چاپ نماید.</p>
+
+<p>برای این کار باید دایرکتوری جدیدی در <code>GOPATH/src$</code> ایجاد کنیم. بهتر آن است که این آدرس از روی منبع کد Github باشد (مثلا <code>GOPATH/src/github.com/go-macaron/inject$</code> ) که با دستور <code>go get</code> برای استفاده دوباره هماهنگی داشته باشد، اما اینجا به منظور کوتاه کردن کلام و راحت تر ایجاد شدن اولین پروژه به این صورت عمل می‌کنیم:</p>
+
+<ol>
+<li><p>دستور <code>mkdir $GOPATH/src/helloworld</code> را در خط فرمان اجرا می‌کنیم.</p></li>
+
+<li><p>دستور <code>subl $GOPATH/src/helloworld</code> را به منظور باز شدن پروژه در ویرایشگر اجرا می‌کنیم.</p></li>
+
+<li><p>یک فایل جدید بنام <code>helloworld.go</code> در شاخه اصلی ایجاد می‌کنیم و محتوای زیر را در آن قرار می‌دهیم:</p></li>
+</ol>
+
+<pre><code class="language-go">   package main
+
+   import (
+     &quot;fmt&quot;
+   )
+
+   func main() {
+     fmt.Println(&quot;Hello World&quot;)
+   }
+
+</code></pre>
+
+<ol>
+<li>حال دستور <code>go run $GOPATH/src/helloworld/helloworld.go</code> را در خط فرمان اجرا کنید،  خروجی را بصورت زیر مشاهده خواهید کرد.</li>
+</ol>
+
+<p><img src="/images/helloworld-in-ubuntu.png" alt="برنامه نوشته شده  Hello World در Ubuntu" /></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="http://localhost:1313/" style="background-image: url(http://localhost:1313/images/logo.png)"><span class="hidden">پوریا دانشور's Picture</span></a>
+    </figure>
+    
+
+    
+
+
+    
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'gophergo';
+  var disqus_url = 'http:\/\/localhost:1313\/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Gopher</a> .تمامی حقوق نشر محفوظ می‌باشد</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/pdan/caspian">Caspian</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/persian-date-0.1.8.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>
+

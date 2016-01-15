@@ -1,0 +1,32 @@
+body {
+  font-family: "IRANSans", serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "IRANSans", serif;
+  font-weight: 200;
+}
+.main-nav a {
+  font-family: "IRANSans", serif;
+}
+.nav {
+  font-family: "IRANSans", serif;
+}
+.subscribe-button {
+  font-family: "IRANSans", serif;
+}
+.page-title {
+  font-family: "IRANSans", serif;
+  text-transform: uppercase;
+}
+.page-description {
+  font-family: "IRANSans", serif;
+}
+.post-meta {
+  font-family: "IRANSans", serif;
+}
+.pagination {
+  font-family: "IRANSans", serif;
+}
+.site-footer {
+  font-family: "IRANSans", serif;
+}

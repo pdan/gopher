@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>نصب on Gopher</title>
+    <link>http://localhost:1313/tags/%D9%86%D8%B5%D8%A8/</link>
+    <description>Recent content in نصب on Gopher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
+    <lastBuildDate>Fri, 15 Jan 2016 21:23:04 +0330</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%D9%86%D8%B5%D8%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ساخت محیط ساده برای توسعه با زبان go</title>
+      <link>http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
+      <pubDate>Fri, 15 Jan 2016 21:23:04 +0330</pubDate>
+      
+      <guid>http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
+      <description>
+
+&lt;p&gt;داشتن یک محیط مناسب برای توسعه توسط یک زبان خاص همواره جزو مهمترین مسائل برای شروع کار با آن است. در اینجا سعی شده ابزار‌هایی برای ساخت محیط برنامه نویسی  Go  معرفی شود که در سه پلتفرم Linux, Mac, Windows  قابل پیاده سازی باشند. همچنین تمامی مراحل در سیستم عامل  Ubuntu 15.04  اجرا شده است.&lt;/p&gt;
+
+&lt;h3 id=&#34;نصب-go:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;نصب Go&lt;/h3&gt;
+
+&lt;p&gt;برای نصب Go  و مشتقاتش از چندین راه می‌توان وارد شد! که در اینجا دو روش را بررسی خواهیم کرد.&lt;/p&gt;
+
+&lt;h5 id=&#34;راه-اول:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;راه اول&lt;/h5&gt;
+
+&lt;p&gt;در ابتدا آخرین نسخه را برای سیستم عامل مورد علاقه خود از &lt;a href=&#34;https://golang.org/dl/&#34;&gt;صفحه رسمی golang&lt;/a&gt; دریافت و نصب کنید.&lt;/p&gt;
+
+&lt;h5 id=&#34;راه-دوم-توصیه-می-شود:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;راه دوم (توصیه می‌شود)&lt;/h5&gt;
+
+&lt;p&gt;معمولا مدیریت کنندگان نسخه (Version Managers) از طرفداران زیادی برخوردار هستند. برای زبان  Go  هم نرم‌افزار مدیریت نسخه خوبی ساخته شده با نام &lt;a href=&#34;https://github.com/moovweb/gvm&#34;&gt;gvm&lt;/a&gt; که این قابلیت را به شما می‌دهد که نسخه‌های مختلفی از Go را روی سیستم خود داشته باشید تا در زمان نیاز به سرعت بین آنها سوییچ کنید. همانطور که می‌دانید غربی‌های خبیث این زبان را هم برای کشور عزیزمان تحریم کرده‌اند (مثلا اسمش نرم‌افزار آزاد هست) و  gvm  این امکان را به ما می‌دهد که بتوانیم Go  را از منبع دیگری که چه از داخل و چه از خارج تحریم نباشد نصب کنیم.&lt;/p&gt;
+
+&lt;p&gt;ابتدا دستور زیر را در خط فرمان اجرا کنید تا بسته‌های پیش نیاز نصب شوند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo apt-get install curl git mercurial make binutils bison gcc build-essential
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای نصب  gvm دستور زیر را در خط فرمان اجرا کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ bash &amp;lt; &amp;lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حال که  gvm  نصب شده است دستور زیر را اجرا کنید تا از صحت نصب اطمینان حاصل کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ gvm version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از نسخه 1.5، مترجم  Go  مستقل شده است، بدین معنا که تمام کد‌های آن با نسخه  1.4،  بجای  C  نوشته شده است.  بنابراین برای اینکه بتوانیم نسخه 1.5  را کامپایل کنیم نیاز به نسخه 1.4  داریم. با اجرای دستورات زیر  Go  را برای سیستم خود نصب می‌نمایید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ gvm install go1.4.3 --source=http://g.pdan.ir/golang/go.git
+$ gvm use go1.4.3
+$ gvm install go1.5.3 --source=http://g.pdan.ir/golang/go.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر مورد تحریم قرار نگرفته‌اید &lt;code&gt;source=http://g.pdan.ir/golang/go.git--&lt;/code&gt; را از انتهای دستورات حذف نمایید تا gvm از سرور اصلی گوگل برای شما نصب کند.&lt;/p&gt;
+
+&lt;h5 id=&#34;تعریف-فضای-کاری:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;تعریف فضای‌ کاری&lt;/h5&gt;
+
+&lt;p&gt;از آنجایی که تمامی کدنویسی در زبان Go تحت چهارچوب خاصی توصیه می‌شود، &lt;a href=&#34;https://golang.org/doc/code.html&#34;&gt;پیشنهاد شده&lt;/a&gt; حتما متغیر محیطی &lt;code&gt;GOPATH&lt;/code&gt; به محیط کار (Workspace)  اشاره کند و همه کد‌ها در آنجا قرار بگیرند. gvm  در زمان نصب برای هر نسخه‌ محیطی جداگانه در نظر می‌گیرد. برای اینکه بدانید محیط کاری در کدام مسیر قرار دارد، کافی است دستور زیر را اجرا کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ echo $GOPATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;نصب-محیط-کد-نویسی:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;نصب محیط کد نویسی&lt;/h3&gt;
+
+&lt;p&gt;ویرایشگر‌ها و  IDE‌ های متعددی با قابلیت‌های متفاوت و مزیت‌ها و کمیت‌های قابل سنجش از  Go  پشتیبانی می‌کنند. مهم این است سلیقه شما چی بپسندد و با کدام بیشتر راحت باشید. لیستی از پلاگین‌ها و ویرایشگر‌ها برای این زبان را می‌توانید از &lt;a href=&#34;https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins&#34;&gt;IDEsAndTextEditorPlugins&lt;/a&gt; دریافت کنید. در این پُست سعی می‌شود چند مورد را معرفی کنیم.&lt;/p&gt;
+
+&lt;h4 id=&#34;ویرایشگر-atom:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;ویرایشگر  ATOM&lt;/h4&gt;
+
+&lt;p&gt;سایت رسمی: &lt;a href=&#34;https://atom.io&#34;&gt;atom.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;از خصوصیات این ویرایشگر می‌توان به کد باز بودن آن و پشتیبانی از زبان  Go با افزونه &lt;a href=&#34;https://github.com/joefitzgerald/**go**-**plus**&#34;&gt;go-plus&lt;/a&gt; اشاره کرد. این ویرایشگر توسط &lt;a href=&#34;https://github.com/&#34;&gt;Github&lt;/a&gt;  در سال ۲۰۱۴ رونمایی شد. برای نصب این ویرایشگر کافی است به &lt;a href=&#34;https://github.com/atom/atom/releases/tag/v1.3.3&#34;&gt;صفحه انتشار نسخه‌ها&lt;/a&gt; مراجعه کنید و نسخه متناسب با سیستم خود را دریافت کنید.&lt;/p&gt;
+
+&lt;p&gt;برای این کار میتوانید از دستور &lt;code&gt;wget&lt;/code&gt;  استفاده کنید (این دستور نسخه ۱.۳.۳ را برای سیستم‌های ۶۴ بیت دبیان دانلود می‌کند) :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget -c https://github.com/atom/atom/releases/download/v1.3.3/atom-amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;سپس می‌توانید با دستور زیر آن را نصب نمایید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo dpkg -i atom-amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حال ویرایشگر نصب شده است، با اجرا کردن دستور زیر در خط فرمان می‌توانید افزونه  &lt;a href=&#34;https://github.com/joefitzgerald/**go**-**plus**&#34;&gt;go-plus&lt;/a&gt;  را نصب کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ apm install go-plus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;ویرایشگر-sublime:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;ویرایشگر  Sublime&lt;/h4&gt;
+
+&lt;p&gt;سایت رسمی: &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;sublimetext.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;سابلایم یک ویرایشگر کد محبوب در بین توسعه دهندگان است که متاسفانه آزاد نیست ولی بدون محدودیت می‌توانید می‌توانید از آن استفاده کنید تنها چند وقت یکبار پیامی آزار دهنده شما را تشویق به خریدن نسخه کامل می‌کند. از ویژگی‌های این ویرایشگر سادگی، سرعت اجرای بالا حتی در سیستم‌های ضعیف می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;برای نصب ویرایشگر ابتدا آن را از سایت رسمی‌اش دریافت کنید و … اینطوری دریافت کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget -c https://download.sublimetext.com/sublime-text_build-3083_amd64.deb
+$ sudo dpkg -i sublime-text_build-3083_amd64.deb
+$ subl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با اجرای دستور آخر برنامه اجرا می‌شود و شما باید &lt;a href=&#34;https://packagecontrol.io/installation#st3&#34;&gt;Package Control&lt;/a&gt; را که یک نصاب افزونه برای سابلایم است روی آن نصب نمایید. (مراجعه به سایت سازنده)&lt;/p&gt;
+
+&lt;p&gt;بعد از نصب Package Control  و راه اندازی دوباره ویرایشگر، کلید‌های ترکیبی &lt;code&gt;ctrl+shift+p&lt;/code&gt; را بفشارید و در جعبه متنی عبارت ‍&lt;code&gt;Package Control: Install Package&lt;/code&gt; را وارد کنید تا لیست افزونه ها ظاهر شود. سپس افزونه &lt;code&gt;GoSublime&lt;/code&gt;  را از آن انتخاب کنید تا نصب گردد.&lt;/p&gt;
+
+&lt;h3 id=&#34;ساخت-برنامه-hello-world:5ed0c2b5ebe3646ba74bc1a39254cce9&#34;&gt;ساخت برنامه Hello World&lt;/h3&gt;
+
+&lt;p&gt;در اینجا می‌خواهیم برنامه‌ای بسازیم که کلمه معروف  Hello World  را در خروجی چاپ نماید.&lt;/p&gt;
+
+&lt;p&gt;برای این کار باید دایرکتوری جدیدی در &lt;code&gt;GOPATH/src$&lt;/code&gt; ایجاد کنیم. بهتر آن است که این آدرس از روی منبع کد Github باشد (مثلا &lt;code&gt;GOPATH/src/github.com/go-macaron/inject$&lt;/code&gt; ) که با دستور &lt;code&gt;go get&lt;/code&gt; برای استفاده دوباره هماهنگی داشته باشد، اما اینجا به منظور کوتاه کردن کلام و راحت تر ایجاد شدن اولین پروژه به این صورت عمل می‌کنیم:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;دستور &lt;code&gt;mkdir $GOPATH/src/helloworld&lt;/code&gt; را در خط فرمان اجرا می‌کنیم.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;دستور &lt;code&gt;subl $GOPATH/src/helloworld&lt;/code&gt; را به منظور باز شدن پروژه در ویرایشگر اجرا می‌کنیم.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;یک فایل جدید بنام &lt;code&gt;helloworld.go&lt;/code&gt; در شاخه اصلی ایجاد می‌کنیم و محتوای زیر را در آن قرار می‌دهیم:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;   package main
+
+   import (
+     &amp;quot;fmt&amp;quot;
+   )
+
+   func main() {
+     fmt.Println(&amp;quot;Hello World&amp;quot;)
+   }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;حال دستور &lt;code&gt;go run $GOPATH/src/helloworld/helloworld.go&lt;/code&gt; را در خط فرمان اجرا کنید،  خروجی را بصورت زیر مشاهده خواهید کرد.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/helloworld-in-ubuntu.png&#34; alt=&#34;برنامه نوشته شده  Hello World در Ubuntu&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
