@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>معرفی on Gopher</title>
-    <link>http://localhost:1313/tags/%D9%85%D8%B9%D8%B1%D9%81%DB%8C/</link>
+    <link>http://gopher.ir/tags/%D9%85%D8%B9%D8%B1%D9%81%DB%8C/</link>
     <description>Recent content in معرفی on Gopher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
     <lastBuildDate>Mon, 21 Dec 2015 23:34:22 +0330</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D9%85%D8%B9%D8%B1%D9%81%DB%8C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://gopher.ir/tags/%D9%85%D8%B9%D8%B1%D9%81%DB%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>پیش درآمد</title>
-      <link>http://localhost:1313/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</link>
+      <link>http://gopher.ir/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</link>
       <pubDate>Mon, 21 Dec 2015 23:34:22 +0330</pubDate>
       
-      <guid>http://localhost:1313/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</guid>
+      <guid>http://gopher.ir/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</guid>
       <description>&lt;p&gt;برنامه‌نویسی کامپیوتر یک هنر است، مهارت و علم چگونگی نوشتن برنامه‌ها به منظور پردازش  در کامپیوتر‌ها. در این وبلاگ سعی داریم چگونگی برنامه‌نویسی، بررسی توانایی‌ها و معرفی امکانات &lt;a href=&#34;https://golang.org/&#34;&gt;زبانی که توسط  Google  طراحی شده، بنام  Go&lt;/a&gt;  بپردازیم.&lt;/p&gt;
 
 &lt;p&gt;Go یک زبان برنامه‌نویسی همه منظوره با امکانات پیشرفته و Syntax  شفاف می‌باشد. بخاطر پشتیبانی از گستره بسیاری از پلتفرم‌ها، کتابخانه‌های قدرتمند مستند سازی شده و تمرکز روی اصول مهندسی نرم‌افزار،  Go  یکی از ایده‌آل ترین زبان‌ها برای یادگیری بعنوان اولین زبان برنامه‌نویسی می‌باشد.&lt;/p&gt;

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unit Test on Gopher</title>
-    <link>http://localhost:1313/tags/unit-test/</link>
+    <link>http://gopher.ir/tags/unit-test/</link>
     <description>Recent content in Unit Test on Gopher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
     <lastBuildDate>Wed, 13 Jan 2016 12:07:57 +0330</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://gopher.ir/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>unit testing در زبان go</title>
-      <link>http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
+      <link>http://gopher.ir/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
       <pubDate>Wed, 13 Jan 2016 12:07:57 +0330</pubDate>
       
-      <guid>http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
+      <guid>http://gopher.ir/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
       <description>
 
 &lt;p&gt;یکی از اجزای مهم یک نرم‌افزار آزمایش کردن (Testing) آن است. دو روش معمول برای Testing  برنامه‌های نوشته شده تحت وب به زبان Go  وجود دارد. اولین روش با حس و حال  unit-test  می‌باشد. دیگری بنام  روش end-to-end معروف است. در این پست ما هر دو روش را بررسی می‌کنیم.&lt;/p&gt;

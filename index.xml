@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gopher</title>
-    <link>http://localhost:1313/</link>
+    <link>http://gopher.ir/</link>
     <description>Recent content on Gopher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
     <lastBuildDate>Fri, 15 Jan 2016 21:23:04 +0330</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://gopher.ir/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ساخت محیط ساده برای توسعه با زبان go</title>
-      <link>http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
+      <link>http://gopher.ir/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
       <pubDate>Fri, 15 Jan 2016 21:23:04 +0330</pubDate>
       
-      <guid>http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
+      <guid>http://gopher.ir/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
       <description>
 
 &lt;p&gt;داشتن یک محیط مناسب برای توسعه توسط یک زبان خاص همواره جزو مهمترین مسائل برای شروع کار با آن است. در اینجا سعی شده ابزار‌هایی برای ساخت محیط برنامه نویسی  Go  معرفی شود که در سه پلتفرم Linux, Mac, Windows  قابل پیاده سازی باشند. همچنین تمامی مراحل در سیستم عامل  Ubuntu 15.04  اجرا شده است.&lt;/p&gt;
@@ -135,16 +135,16 @@ $ subl
 &lt;li&gt;حال دستور &lt;code&gt;go run $GOPATH/src/helloworld/helloworld.go&lt;/code&gt; را در خط فرمان اجرا کنید،  خروجی را بصورت زیر مشاهده خواهید کرد.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/helloworld-in-ubuntu.png&#34; alt=&#34;برنامه نوشته شده  Hello World در Ubuntu&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://gopher.ir/images/helloworld-in-ubuntu.png&#34; alt=&#34;برنامه نوشته شده  Hello World در Ubuntu&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>unit testing در زبان go</title>
-      <link>http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
+      <link>http://gopher.ir/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
       <pubDate>Wed, 13 Jan 2016 12:07:57 +0330</pubDate>
       
-      <guid>http://localhost:1313/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
+      <guid>http://gopher.ir/unit-testing-%D8%AF%D8%B1-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
       <description>
 
 &lt;p&gt;یکی از اجزای مهم یک نرم‌افزار آزمایش کردن (Testing) آن است. دو روش معمول برای Testing  برنامه‌های نوشته شده تحت وب به زبان Go  وجود دارد. اولین روش با حس و حال  unit-test  می‌باشد. دیگری بنام  روش end-to-end معروف است. در این پست ما هر دو روش را بررسی می‌کنیم.&lt;/p&gt;
@@ -265,10 +265,10 @@ func main() {
     
     <item>
       <title>پیش درآمد</title>
-      <link>http://localhost:1313/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</link>
+      <link>http://gopher.ir/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</link>
       <pubDate>Mon, 21 Dec 2015 23:34:22 +0330</pubDate>
       
-      <guid>http://localhost:1313/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</guid>
+      <guid>http://gopher.ir/%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF/</guid>
       <description>&lt;p&gt;برنامه‌نویسی کامپیوتر یک هنر است، مهارت و علم چگونگی نوشتن برنامه‌ها به منظور پردازش  در کامپیوتر‌ها. در این وبلاگ سعی داریم چگونگی برنامه‌نویسی، بررسی توانایی‌ها و معرفی امکانات &lt;a href=&#34;https://golang.org/&#34;&gt;زبانی که توسط  Google  طراحی شده، بنام  Go&lt;/a&gt;  بپردازیم.&lt;/p&gt;
 
 &lt;p&gt;Go یک زبان برنامه‌نویسی همه منظوره با امکانات پیشرفته و Syntax  شفاف می‌باشد. بخاطر پشتیبانی از گستره بسیاری از پلتفرم‌ها، کتابخانه‌های قدرتمند مستند سازی شده و تمرکز روی اصول مهندسی نرم‌افزار،  Go  یکی از ایده‌آل ترین زبان‌ها برای یادگیری بعنوان اولین زبان برنامه‌نویسی می‌باشد.&lt;/p&gt;

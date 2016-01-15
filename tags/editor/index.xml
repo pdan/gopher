@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Editor on Gopher</title>
-    <link>http://localhost:1313/tags/editor/</link>
+    <link>http://gopher.ir/tags/editor/</link>
     <description>Recent content in Editor on Gopher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>.تمامی حقوق نشر محفوظ می‌باشد</copyright>
     <lastBuildDate>Fri, 15 Jan 2016 21:23:04 +0330</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://gopher.ir/tags/editor/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ساخت محیط ساده برای توسعه با زبان go</title>
-      <link>http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
+      <link>http://gopher.ir/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</link>
       <pubDate>Fri, 15 Jan 2016 21:23:04 +0330</pubDate>
       
-      <guid>http://localhost:1313/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
+      <guid>http://gopher.ir/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-go/</guid>
       <description>
 
 &lt;p&gt;داشتن یک محیط مناسب برای توسعه توسط یک زبان خاص همواره جزو مهمترین مسائل برای شروع کار با آن است. در اینجا سعی شده ابزار‌هایی برای ساخت محیط برنامه نویسی  Go  معرفی شود که در سه پلتفرم Linux, Mac, Windows  قابل پیاده سازی باشند. همچنین تمامی مراحل در سیستم عامل  Ubuntu 15.04  اجرا شده است.&lt;/p&gt;
@@ -135,7 +135,7 @@ $ subl
 &lt;li&gt;حال دستور &lt;code&gt;go run $GOPATH/src/helloworld/helloworld.go&lt;/code&gt; را در خط فرمان اجرا کنید،  خروجی را بصورت زیر مشاهده خواهید کرد.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/helloworld-in-ubuntu.png&#34; alt=&#34;برنامه نوشته شده  Hello World در Ubuntu&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://gopher.ir/images/helloworld-in-ubuntu.png&#34; alt=&#34;برنامه نوشته شده  Hello World در Ubuntu&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
